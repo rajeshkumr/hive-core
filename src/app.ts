@@ -38,6 +38,11 @@ app.use( apollo({
   }
 }));
 app.use(staticPlugin());
+app.use(routes);
 
+app.get("/", (context) => {
+  console.log(context);
+  return context;
+});
 
 export default app;
