@@ -1,4 +1,5 @@
 import { Elysia, t } from "elysia";
+import { googleLogin, facebookLogin } from "./controllers/login";
 
 const routes = new Elysia({
   prefix: "/v1"
@@ -35,5 +36,8 @@ routes.state("version", 1)
       400: t.Null()
   }
 })
+
+.get("/auth/facebook", facebookLogin)
+.get("/auth/google", googleLogin);
 
 export default routes;
