@@ -5,12 +5,8 @@ import { apollo, gql } from "@elysiajs/apollo";
 import { staticPlugin } from "@elysiajs/static";
 
 import routes from "./routes";
-import { facebookAuth, googleAuth } from "./helpers/passport";
 
 const app = new Elysia();
-
-facebookAuth();
-googleAuth();
 app.use(swagger());
 app.use(cors());
 // Allows app to strictly send string based response

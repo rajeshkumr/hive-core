@@ -2,6 +2,11 @@
   "name": "hive-core",
   "module": "server.ts",
   "type": "module",
+  "author": {
+    "name": "Raazirio",
+    "url": "https://github.com/rajeshkumr",
+    "email": "raazirio@proton.me"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/server.ts",
@@ -25,12 +30,11 @@
     "@elysiajs/cors": "^0.7.1",
     "@elysiajs/static": "^0.7.1",
     "@elysiajs/swagger": "^0.7.3",
-    "@types/passport-facebook": "^3.0.2",
-    "@types/passport-google-oauth20": "^2.0.13",
+    "@lucia-auth/adapter-prisma": "^3.0.2",
+    "@lucia-auth/oauth": "^3.3.1",
     "elysia": "^0.7.17",
     "graphql": "^16.8.1",
-    "passport": "^0.6.0",
-    "passport-facebook": "^3.0.0",
-    "passport-google-oauth20": "^2.0.0"
+    "lucia": "^2.7.2",
+    "prisma": "^5.5.2"
   }
 }
