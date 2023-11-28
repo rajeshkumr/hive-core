@@ -1,4 +1,5 @@
-import { describe, expect, it } from 'bun:test'
+import { describe, expect, it } from "bun:test";
+import { Elysia } from "elysia";
 
 describe('Elysia', () => {
     it('return a response', async () => {
