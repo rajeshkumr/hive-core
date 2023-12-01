@@ -8,13 +8,14 @@
     "email": "raazirio@proton.me"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "bun test --update-snapshots --coverage",
     "dev": "bun run --watch src/server.ts",
     "start": "bun run src/server.ts",
     "clean": "rm -rf dist && echo 'Done.'",
     "build": "bun build ./src/**/*.ts --outdir ./dist --external @prisma/client --external bun:test --minify",
     "build:watch": "bun run build --watch",
-    "dev:inspect": "bun run --inspect src/server.ts"
+    "dev:inspect": "bun run --inspect src/server.ts",
+    "start:prod": "bun run dist/server.js"
   },
   "devDependencies": {
     "bun-types": "^1.0.6",
