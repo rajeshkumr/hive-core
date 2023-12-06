@@ -1,14 +1,21 @@
 {
   "name": "hive-core",
-  "module": "server.ts",
+  "module": "index.ts",
   "type": "module",
+  "author": {
+    "name": "Raazirio",
+    "url": "https://github.com/rajeshkumr",
+    "email": "raazirio@proton.me"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "bun test --update-snapshots --coverage",
     "dev": "bun run --watch src/server.ts",
     "start": "bun run src/server.ts",
     "clean": "rm -rf dist && echo 'Done.'",
-    "build": "bun build ./src/* --outdir ./dist",
-    "build:watch": "bun run build --watch"
+    "build": "bun build ./src/**/*.ts --outdir ./dist --external @prisma/client --external bun:test --minify",
+    "build:watch": "bun run build --watch",
+    "dev:inspect": "bun run --inspect src/server.ts",
+    "start:prod": "bun run dist/server.js"
   },
   "devDependencies": {
     "bun-types": "^1.0.6",
@@ -24,7 +31,12 @@
     "@elysiajs/cors": "^0.7.1",
     "@elysiajs/static": "^0.7.1",
     "@elysiajs/swagger": "^0.7.3",
+    "@lucia-auth/adapter-prisma": "^3.0.2",
+    "@lucia-auth/oauth": "^3.3.1",
+    "@prisma/client": "^5.6.0",
     "elysia": "^0.7.17",
-    "graphql": "^16.8.1"
+    "graphql": "^16.8.1",
+    "lucia": "^2.7.2",
+    "prisma": "^5.5.2"
   }
 }
