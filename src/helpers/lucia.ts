@@ -1,6 +1,6 @@
 import { lucia } from "lucia";
 import { prisma } from "@lucia-auth/adapter-prisma";
-import { PrismaClient } from "@prisma/client/edge";
+import { PrismaClient } from "@prisma/client";
 import { elysia } from "lucia/middleware";
 
 const client = new PrismaClient();
