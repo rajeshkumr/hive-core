@@ -32,11 +32,13 @@ COPY --from=install /temp/prod/node_modules node_modules
 COPY --from=prerelease /usr/src/app/index.ts .
 COPY --from=prerelease /usr/src/app/package.json .
 COPY . .
+# COPY prisma ./prisma/
+# COPY --chown=bun:bun --from=builder /app/prisma /app/prisma
+# COPY --chown=bun:bun --from=builder /app/src /app/src
 
 # run the app
 USER bun
 EXPOSE 3000/tcp
 # RUN bun install
-RUN ls -alt
+CMD [ "bun", "run", "prisma:generate" ]
 ENTRYPOINT [ "bun", "run", "src/server.ts" ]
-
