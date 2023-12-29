@@ -16,7 +16,7 @@
     "build:watch": "bun run build --watch",
     "dev:inspect": "bun run --inspect src/server.ts",
     "start:prod": "bun run dist/server.js",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "npx prisma generate"
   },
   "prisma": {
     "schema": "prisma/schema.prisma"
