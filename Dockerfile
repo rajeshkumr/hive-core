@@ -24,6 +24,7 @@ COPY --from=install /usr/src/app/ .
 
 RUN --mount=type=secret,id=_env,dst=/etc/secrets/.env cat /etc/secrets/.env
 ENV NODE_ENV production
+ENV PORT 3000
 USER bun
 EXPOSE 3000/tcp
 ENTRYPOINT [ "bun", "run", "dist/server.js" ]
