@@ -27,4 +27,4 @@ ENV NODE_ENV production
 ENV PORT 3000
 USER bun
 EXPOSE 3000/tcp
-ENTRYPOINT [ "npm", "run", "dist/server.js" ]
+ENTRYPOINT [ "bun", "run", "src/server.ts" ]
