@@ -15,7 +15,11 @@
     "build": "bun build ./src/server.ts ./src/**/*.ts --outdir ./dist --external @prisma/client --external bun:test --external @elysiajs/apollo --external @elysiajs/static --minify",
     "build:watch": "bun run build --watch",
     "dev:inspect": "bun run --inspect src/server.ts",
-    "start:prod": "bun run dist/server.js"
+    "start:prod": "bun run dist/server.js",
+    "prisma:generate": "npx prisma generate"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   },
   "devDependencies": {
     "bun-types": "^1.0.6",
